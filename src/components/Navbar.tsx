@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
+import MobNav from './MobNav'
 
 const Navbar = () => {
 
@@ -20,7 +21,7 @@ const Navbar = () => {
       <div className='flex justify-between items-center py-4 px-2 md:px-10'>
         <Link 
         className="hidden md:block"
-        href="discover/now_playing"
+        href="/discover/now_playing"
         >
           <h2 className='text-[30px]'>TheMovieDB</h2>
         </Link>
@@ -35,7 +36,7 @@ const Navbar = () => {
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder='Search'
+            placeholder='Search...'
           />
 
          <button
@@ -44,6 +45,10 @@ const Navbar = () => {
           Search
          </button>
         </form>
+
+        <Suspense fallback={<div>Loading...</div>}>
+        <MobNav  input={input} setInput={setInput} handleSubmit={handleSubmit} />
+        </Suspense>
 
       </div>
     </div>

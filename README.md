@@ -1,3 +1,17 @@
+## Learning Next.js14, typescript, Tailwind using TheMovieDB-api
+
+#### Problems
+
+case 1: "Missing Suspense boundary with useSearchParams"
+![case-1](./public/readMe-images/case-01.png)
+solution: Wrapped in a suspended boundary within the parent file of a file using useSearchParams().
+![solution-01](./public/readMe-images/solution-01.png)
+
+reference
+[Next.js](https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout)
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
