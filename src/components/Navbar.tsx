@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { Suspense, useState } from 'react'
 import MobNav from './MobNav'
+import Logo from './Logo'
 
 const Navbar = () => {
 
@@ -23,7 +24,8 @@ const Navbar = () => {
         className="hidden md:block"
         href="/discover/now_playing"
         >
-          <h2 className='text-[30px]'>TheMovieDB</h2>
+          <Logo />
+          {/* <h2 className='text-[30px]'>TheMovieDB</h2> */}
         </Link>
 
 
