@@ -13,11 +13,57 @@
 
   body {
     @apply text-white bg-primary;
+
+
   }
+}
+
+:root {
+  --light-shadow-color: #fff;
+  --blue-shadow-color: #26b0ed;
 }
 
 .logo {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+.logo:hover .logoText {
+  transition: 1s;
+  color: var(--light-shadow-color);
+  text-shadow: 0 0 4px var(--light-shadow-color),
+               0 0 8px var(--light-shadow-color),
+               0 0 16px var(--light-shadow-color),
+               0 0 48px var(--blue-shadow-color),
+               0 0 56px var(--blue-shadow-color)
+}
+
+.logo:hover .logoCircle {
+  transition: 1s;
+  background-color: var(--light-shadow-color);
+  box-shadow: 0 0 4px var(--light-shadow-color),
+              0 0 8px var(--light-shadow-color),
+              0 0 16px var(--light-shadow-color),
+              0 0 48px var(--blue-shadow-color),
+              0 0 56px var(--blue-shadow-color)
+}
+
+.neonText:hover {
+  transition: 1s;
+  color: var(--light-shadow-color);
+  text-shadow: 0 0 4px var(--light-shadow-color),
+               0 0 8px var(--light-shadow-color),
+               0 0 16px var(--light-shadow-color),
+               0 0 48px var(--blue-shadow-color),
+               0 0 56px var(--blue-shadow-color)
+}
+
+.neonBox:hover {
+  transition: 1s;
+  box-shadow: 0 0 4px var(--light-shadow-color),
+              0 0 8px var(--light-shadow-color),
+              0 0 16px var(--light-shadow-color),
+              0 0 48px var(--blue-shadow-color),
+              0 0 56px var(--blue-shadow-color)
 }

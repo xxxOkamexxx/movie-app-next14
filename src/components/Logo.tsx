@@ -4,9 +4,9 @@ const Logo = () => {
   return (
     <div>
       <h2 className='text-textColor text-[30px] flex items-center logo'>
-        <div className=''>TheM</div>      
-        <div className='w-[20px] h-[20px] bg-textColor rounded-full '></div>
-        <div className=''>vieDB</div>
+        <div className='logoText'>TheM</div>      
+        <div className='w-[20px] h-[20px] bg-textColor rounded-full logoCircle'></div>
+        <div className='logoText'>vieDB</div>
       </h2>
     </div>
   )

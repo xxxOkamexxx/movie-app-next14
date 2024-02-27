@@ -34,7 +34,7 @@ const Navbar = () => {
           onSubmit={handleSubmit}
         >
           <input 
-            className='bg-secondary px-4 py-2 outline-none placeholder:text-textColor'
+            className='bg-secondary px-4 py-2 outline-none placeholder:text-textColor neonBox'
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -42,7 +42,7 @@ const Navbar = () => {
           />
 
          <button
-          className='bg-secondary text-textColor px-4 py-2 hover:bg-textColor hover:text-white'
+          className='bg-secondary text-textColor px-4 py-2 hover:bg-textColor hover:text-white neonBox'
          >
           Search
          </button>
