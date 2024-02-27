@@ -24,8 +24,9 @@ const Navbar = () => {
         className="hidden md:block"
         href="/discover/now_playing"
         >
+       
           <Logo />
-          {/* <h2 className='text-[30px]'>TheMovieDB</h2> */}
+          
         </Link>
 
 
@@ -34,7 +35,7 @@ const Navbar = () => {
           onSubmit={handleSubmit}
         >
           <input 
-            className='bg-secondary px-4 py-2 outline-none placeholder:text-textColor neonBox'
+            className='inputBox neonBox'
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -42,7 +43,7 @@ const Navbar = () => {
           />
 
          <button
-          className='bg-secondary text-textColor px-4 py-2 hover:bg-textColor hover:text-white neonBox'
+          className='submitBtn neonBox'
          >
           Search
          </button>

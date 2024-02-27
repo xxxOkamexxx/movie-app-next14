@@ -13,10 +13,39 @@
 
   body {
     @apply text-white bg-primary;
-
-
   }
+
 }
+
+@layer components {
+  .inputBox {
+    @apply bg-secondary px-4 py-2 outline-none placeholder:text-textColor;
+  }
+  
+  .submitBtn {
+    @apply bg-secondary text-textColor px-4 py-2 hover:bg-textColor hover:text-white;
+  }
+  
+  .sidebarTitle {
+    @apply font-semibold text-[18px]
+  }
+
+  .sidebarLink {
+    @apply text-textColor ml-4 cursor-pointer
+  }
+
+  
+}
+
+.sidebarActive {
+  transition: 1s;
+  color: var(--light-shadow-color);
+  text-shadow: 0 0 4px var(--light-shadow-color),
+               0 0 8px var(--light-shadow-color),
+               0 0 16px var(--light-shadow-color),
+               0 0 48px var(--blue-shadow-color),
+               0 0 56px var(--blue-shadow-color)
+ }
 
 :root {
   --light-shadow-color: #fff;
@@ -49,7 +78,7 @@
               0 0 56px var(--blue-shadow-color)
 }
 
-.neonText:hover {
+.neonText:hover{
   transition: 1s;
   color: var(--light-shadow-color);
   text-shadow: 0 0 4px var(--light-shadow-color),

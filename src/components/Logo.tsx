@@ -2,13 +2,13 @@ import React from 'react'
 
 const Logo = () => {
   return (
-    <div>
-      <h2 className='text-textColor text-[30px] flex items-center logo'>
+    <>
+      <h2 className='text-white md:text-[30px] text-[28px] flex items-baseline logo'>
         <div className='logoText'>TheM</div>      
-        <div className='w-[20px] h-[20px] bg-textColor rounded-full logoCircle'></div>
+        <div className='md:size-[18px] size-[17px] bg-white rounded-full logoCircle'></div>
         <div className='logoText'>vieDB</div>
       </h2>
-    </div>
+    </>
   )
 }
 
