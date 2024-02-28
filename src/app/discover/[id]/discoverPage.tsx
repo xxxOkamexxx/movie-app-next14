@@ -11,6 +11,7 @@ import Card from '@/components/Card';
 
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import Footer from '@/components/Footer';
 
 
 const Discover = () => {
@@ -114,6 +115,8 @@ const Discover = () => {
           <span>Prev</span>
         </button>
 
+        <p>{currentPage}/{totalPage}</p>
+
         <button
            disabled={currentPage === totalPage}
           onClick={() => handlePageChange("next")}
@@ -122,6 +125,10 @@ const Discover = () => {
           <span>Next</span>
           <span><IoIosArrowForward /></span>
         </button>
+      </div>
+
+      <div className="pb-20">
+        <Footer />
       </div>
 
     </main>
