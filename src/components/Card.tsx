@@ -19,7 +19,7 @@ const Card = ({img, id, title, releaseDate}:Prop) => {
 
 
   return (
-    <div className='group bg-primary cardSize'>
+    <div className='group neonBox bg-primary cardSize'>
       {!loaded && !error && <CardSkeleton />}
       {error && <CardSkeleton error /> }
   

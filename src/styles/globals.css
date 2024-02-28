@@ -17,7 +17,7 @@
 
   :root {
     --light-shadow-color: #fff;
-    --blue-shadow-color: #26b0ed;
+    --blue-shadow-color: #23a6d5;
     --primary-color: #021527;
     --secondary-color: #0e293f;
     --text-color: #7698bb;
@@ -78,6 +78,15 @@
       background-position: 0% 50%;
     }
   }
+}
+
+.page-btn {
+  background-color: var(--blue-shadow-color);
+  @apply flex items-center text-center gap-3
+}
+
+.page-btn:hover {
+  background-color: var(--text-color); 
 }
 
 
@@ -175,4 +184,6 @@
     height: 32px;
   }
 }
+
+
 
