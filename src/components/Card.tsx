@@ -22,6 +22,7 @@ const Card = ({img, id, title, releaseDate}:Prop) => {
     <div className='group bg-primary cardSize'>
       {!loaded && !error && <CardSkeleton />}
       {error && <CardSkeleton error /> }
+  
 
       <Link
        className={`${!loaded && error && "hidden"}`}
