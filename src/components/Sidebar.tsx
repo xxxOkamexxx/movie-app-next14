@@ -38,7 +38,7 @@ const Sidebar = () => {
 
   return (
     <div
-    className='bg-primary px-10 max-h-[calc(100vh-77px)] pb-6 scrollbarY hidden sm:block'
+    className='bg-primary px-10 max-h-[calc(100vh-77px)] pb-6 scrollbarY hidden sm:block relative'
     >
       <div className='sidebarSectionWrapper'>          
         <p className='sidebarTitle'>
