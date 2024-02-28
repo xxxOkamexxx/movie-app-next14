@@ -43,7 +43,6 @@ const MobNav = ({input, setInput, handleSubmit}: Props) => {
       setSelectedGenre(searchParams.get("genre")!)
     }else {
       setSelectedGenre(params.id.toString())
-
     }
 
   },[searchParams, params.id])
@@ -80,7 +79,7 @@ const MobNav = ({input, setInput, handleSubmit}: Props) => {
 
       {/* full screen nav */}
       <div
-      className={`min-h-[100vh] max-h-[100vh] w-[100%] bg-primary fixed left-0 top-0 z-10 overflow-scroll ${isOpen ? "block" : "hidden"}`}
+      className={`min-h-[100vh] max-h-[100vh] w-[100%] bg-primary fixed left-0 top-0 z-10 scrollbarY ${isOpen ? "block" : "hidden"}`}
       >
         {/* Nav-header */}
         <div className='sticky top-0 bg-primary py-4 w-[100%]'>
@@ -105,7 +104,7 @@ const MobNav = ({input, setInput, handleSubmit}: Props) => {
 
         {/* menu */}
         <div className='px-4 pb-16'>
-          <div className='flex flex-col gap-3 pt-4'>
+          <div className='sidebarSectionWrapper'>
             
             <p className='sidebarTitle'>
               Discover
@@ -153,7 +152,7 @@ const MobNav = ({input, setInput, handleSubmit}: Props) => {
             
           </div>
 
-          <div className='flex flex-col gap-3 pt-4'>
+          <div className='sidebarSectionWrapper'>
             
             <p className='sidebarTitle'>
               Genres
@@ -173,8 +172,6 @@ const MobNav = ({input, setInput, handleSubmit}: Props) => {
             )}
           </div>
         </div>
-
-
       </div> 
 
     </>
