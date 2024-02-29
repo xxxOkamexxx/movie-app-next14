@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     axios
-      .get(`${TMDB_API.BASE_URL}/genre/movie/list?api_key=${TMDB_API.Api_Key }&include_adult=false&language=en-US`
+      .get(`${TMDB_API.BASE_URL}/genre/movie/list?api_key=${TMDB_API.API_KEY}&include_adult=false&language=en-US`
       )
       .then(({data}) => {
       setGenres(data.genres)
