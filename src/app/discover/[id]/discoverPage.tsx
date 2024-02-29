@@ -59,7 +59,7 @@ const Discover = () => {
 
     axios.get(`${TMDB_API.BASE_URL}/movie/${id}`, {
       params: {
-        api_key: TMDB_API.API_KEY,
+        api_key: TMDB_API.Api_Key,
         page
       }
     }).then((response) => {
