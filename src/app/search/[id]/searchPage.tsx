@@ -7,13 +7,12 @@ import TMDB_API from '@/utils/TmdbAPI';
 
 import CardsList from '@/components/CardsList';
 
-
-const Discover = () => {
+const Search = () => {
   const [title, setTitle] = useState("");
   const [movies, setMovies] = useState([]);
-  const [currentPage,setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
-  const [discover, setDiscover] = useState("");
+  const [search, setSearch] = useState("");
 
   const mainRef = useRef<HTMLDivElement>(null);
 
@@ -28,42 +27,36 @@ const Discover = () => {
       behavior: "smooth"
     })
 
-    const id = params.id.toString()
-    const page = searchParams.get("page")
+    const id = params.id.toString();
+    const page = searchParams.get("page");
 
-    setDiscover(id)
+    const capitalize = function(str:string) {
+      if (typeof str !== 'string' || !str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    };
 
-    switch (id) {
-      case "now_playing":
-        setTitle("Now Playing Movies");
-        break;
-      case "top_rated":
-        setTitle("Top Rated");
-        break;
-      case "popular":
-        setTitle("Popular");
-        break;
-      case "upcoming":
-        setTitle("Upcoming");
-        break;
-      default:
-        setTitle("");
-        break;
-    }
+    setTitle('Search results for '+ capitalize(`${id}`));
+    setSearch(id);
 
-    axios.get(`${TMDB_API.BASE_URL}/movie/${id}`, {
+    axios.get(`${TMDB_API.BASE_URL}/search/movie`, {
       params: {
         api_key: TMDB_API.API_KEY,
+        query: id,
         page
       }
-    }).then((response) => {
-      setMovies(response.data.results)
-      setCurrentPage(response.data.page)
-      setTotalPage(response.data.total_pages)
-    }).catch(error => console.log(error))
+    })
+    .then((response) => {
+      setMovies(response.data.results);
+      setCurrentPage(response.data.page);
+      setTotalPage(response.data.total_pages);
+    })
+    .catch((error) => {
+      console.log(error)
+    });
 
   },[params.id, searchParams])
 
+  
   const handlePageChange = (button: string) => {
     let page = ""
     if(button === "prev"){
@@ -72,8 +65,9 @@ const Discover = () => {
       page = `${currentPage+1}`
     }
 
-    router.push(`/discover/${discover}?page=${page}`)
+    router.push(`/search/${search}?page=${page}`)
   }
+    
 
   return (
     <>
@@ -89,4 +83,4 @@ const Discover = () => {
   )
 }
 
-export default Discover
+export default Search
