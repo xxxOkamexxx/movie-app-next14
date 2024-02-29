@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const BASE_URL = "https://api.themoviedb.org/3";
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -13,3 +11,7 @@ const TMDB_API = {
 }
 
 export default TMDB_API
+
+function setupAnalyticsService(NEXT_PUBLIC_API_URL: string | undefined) {
+  throw new Error("Function not implemented.");
+}
