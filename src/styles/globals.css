@@ -107,6 +107,12 @@
   font-style: normal;
 }
 
+.gradientColorText {
+  background: radial-gradient(#ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 .logoText {
   background: radial-gradient(#ee7752, #e73c7e, #23a6d5, #23d5ab);
     -webkit-background-clip: text;
@@ -182,6 +188,45 @@
               0 0 56px var(--blue-shadow-color)
 }
 
+/* Blinking text */
+.blinkingText {
+  color: var(--text-color);
+  animation: blink 3s 0s ease infinite;
+    -moz-animation: blink 3s 0s ease infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+  text-shadow: 
+    0 0 4px #e73c7e,
+    0 0 8px #e73c7e,
+    0 0 16px #e73c7e,
+    0 0 48px #e73c7e,
+    0 0 56px #e73c7e
+  } 
+
+  50% {
+  text-shadow: 
+    0 0 4px #e73c7e76,
+    0 0 8px #e73c7e76,
+    0 0 16px #e73c7e76,
+    0 0 48px #e73c7e76,
+    0 0 56px #e73c7e76
+  }
+}
+
+.blinkingText:hover{
+  color: var(--light-shadow-color);
+  animation: none;
+  transition: 1s;
+  color: var(--light-shadow-color);
+  text-shadow: 0 0 4px var(--light-shadow-color),
+               0 0 8px var(--light-shadow-color),
+               0 0 16px var(--light-shadow-color),
+               0 0 48px var(--blue-shadow-color),
+               0 0 56px var(--blue-shadow-color)
+}
 
 /* Loader */
 .lds-facebook {

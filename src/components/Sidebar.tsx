@@ -31,7 +31,7 @@ const Sidebar = () => {
     if(searchParams.get("genre")){
       setSelectedGenre(searchParams.get("genre")!)
     }else {
-      setSelectedGenre(params.id.toString())
+      setSelectedGenre(params.id?.toString())
     }
 
   },[searchParams, params.id])
