@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
+/* eslint-disable @next/next/no-img-element */
 
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
@@ -67,7 +67,7 @@ const MovieDetails = () => {
 
     setShowPlayer(true);
   }
-
+console.log('error? :', error, 'loaded? :', loaded)
 
   return (
     <main
@@ -94,8 +94,8 @@ const MovieDetails = () => {
               className={`imageSize ${!loaded && error && "hidden"}`}
               src={`${TMDB_API.BASE_IMG_URL}${movie?.poster_path}`} 
               alt={`${movie?.title}`} 
-              onLoad={() => setLoaded(true)}
-              onError={() => setError(true)} 
+              onLoad={() => {movie ? setLoaded(true) : setError(false)}}
+              onError={() => {movie ? setError(true) : setError(false)}} 
             />
           </div>
 
@@ -120,7 +120,7 @@ const MovieDetails = () => {
               <div>Language: {movie?.original_language?.toLocaleUpperCase()}</div>
               <div>Release: {movie?.release_date}</div>
               <div>Runtime: {movie?.runtime} MIN.</div>
-              <div className='flex gap-1 items-center'>Rating: {movie?.vote_average}<RiStarFill /></div>
+              <div className='flex gap-1 items-center'>Rating: {movie?.vote_average}<span><RiStarFill /></span></div>
             </div>
 
             <div className="pt-14 space-y-2 pr-4">
