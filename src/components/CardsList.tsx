@@ -19,7 +19,7 @@ interface Props {
 const CardsList = ({mainRef, title, movies, currentPage, totalPage, handlePageChange,}:Props) => {
   return (
     <main
-      className='scrollbarY bg-primary max-h-[calc(100vh-77px)] min-h-[calc(100vh-77px)] p-8 overflow-x-hidden relative'
+      className='scrollbarY bg-primary main-size-h overflow-x-hidden relative'
       ref={mainRef}
     >
       <h2 className='text-[24px] trackng-2px'>{title}</h2>
