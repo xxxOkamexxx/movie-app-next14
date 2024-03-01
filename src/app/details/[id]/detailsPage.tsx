@@ -17,6 +17,7 @@ import dynamic from "next/dynamic";
 import { RiCloseLine } from "react-icons/ri";
 import { RiStarFill } from "react-icons/ri";
 import { RiPlayFill } from "react-icons/ri";
+import { trace } from 'console';
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 
@@ -36,7 +37,6 @@ const MovieDetails = () => {
   useEffect(() => {
     axios.get(`${TMDB_API.BASE_URL}/movie/${params.id}?api_key=${TMDB_API.API_KEY}&append_to_response=videos`)
     .then((res) => {
-      console.log(res.data)
       setMovie(res.data)
     })
     .catch((err) => {
@@ -45,14 +45,16 @@ const MovieDetails = () => {
     })
   },[params.id])
 
+
   useEffect(() => {
-    const trailer = movie?.videos
-    const trailerIndex = trailer?.results?.findIndex((element) => {
-      element.type === "Trailer"
-    });
+    const trailerIndex = movie?.videos?.results?.findIndex(
+      (element) => element.type === "Trailer"
+    );
 
-    const trailerUrl = `https://www.youtube.com/watch?v=${trailer?.results[trailerIndex || 0]?.key}`;
-
+    const trailerUrl = `https://www.youtube.com/watch?v=${
+      movie?.videos?.results[trailerIndex || 0]?.key
+    }`;
+    console.log('trailerUrl: ', trailerUrl)
     setTrailer(trailerUrl);
   
   },[movie])
@@ -67,7 +69,7 @@ const MovieDetails = () => {
 
     setShowPlayer(true);
   }
-console.log('error? :', error, 'loaded? :', loaded)
+console.log('trailer:', trailer)
 
   return (
     <main

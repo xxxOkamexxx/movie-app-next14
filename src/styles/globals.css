@@ -116,7 +116,7 @@
 }
 
 .gradientColorText {
-  background: radial-gradient(circle at 100%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: radial-gradient(circle at 0%, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
