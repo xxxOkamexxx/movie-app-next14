@@ -17,7 +17,7 @@ import dynamic from "next/dynamic";
 import { RiCloseLine } from "react-icons/ri";
 import { RiStarFill } from "react-icons/ri";
 import { RiPlayFill } from "react-icons/ri";
-import { trace } from 'console';
+
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 
@@ -81,7 +81,10 @@ console.log('trailer:', trailer)
       <div
         className='text-textColor hover:text-white absolute right-0 top-0 m-2 cursor-pointer'
       >
-        <RiCloseLine size={28} />
+        <RiCloseLine 
+          size={28} 
+          onClick={() => router.back()}
+        />
       </div>
 
       {/* Movie Image */}
