@@ -285,6 +285,10 @@
   background: var(--light-shadow-color);
 }
 
+.gradientBg {
+  background: radial-gradient(circle at 100%, #ee7752, #e73c7e, #23a6d5, #23d5ab)
+}
+
 
 
 

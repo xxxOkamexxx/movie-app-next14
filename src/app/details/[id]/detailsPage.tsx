@@ -153,7 +153,7 @@ console.log('trailer:', trailer)
             showPlayer ? "opacity-100 z-50" : "opacity-0 -z-10"
           }`}
         >
-          <div className="flex items-center justify-between bg-black text-[#f9f9f9] p-3.5">
+          <div className="flex items-center justify-between gradientBg text-[#f9f9f9] p-3.5">
             <span className="font-semibold">Playing Trailer</span>
             <div
               className="cursor-pointer w-8 h-8 flex justify-center items-center rounded-lg opacity-50 hover:opacity-75 hover:bg-[#0F0F0F]"
