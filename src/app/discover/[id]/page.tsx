@@ -3,7 +3,7 @@ import Discover from './discoverPage'
 
 const page = () => {
   return (
-    <main>
+    <main >
       <Suspense>
         <Discover />
       </Suspense>

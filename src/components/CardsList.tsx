@@ -19,14 +19,19 @@ interface Props {
 const CardsList = ({mainRef, title, movies, currentPage, totalPage, handlePageChange,}:Props) => {
   return (
     <main
-      className='scrollbarY bg-primary main-size-h overflow-x-hidden relative'
+      className='scrollbarY main-size-h overflow-x-hidden relative'
       ref={mainRef}
     >
+
+      <div className="gradient-01" />
+      <div className="gradient-02" />
+     
+
       <h2 className='text-[24px] trackng-2px'>{title}</h2>
       {movies.length === 0 &&
         <Loader />
       }
-
+      
       <div className='grid gap-8 moviesGrid place-items-center mt-8'>
         {movies.map((movie: Imovie) => 
           <Card 
@@ -41,7 +46,7 @@ const CardsList = ({mainRef, title, movies, currentPage, totalPage, handlePageCh
 
 
       {/* Pagination */}
-      <div className='flex justify-center gap-16 py-6 pt-16'>
+      <div className='flex justify-center gap-16 py-6 pt-16 z-20'>
         <button
            disabled={currentPage === 1}
           onClick={() => handlePageChange("prev")}
@@ -62,6 +67,8 @@ const CardsList = ({mainRef, title, movies, currentPage, totalPage, handlePageCh
           <span><IoIosArrowForward /></span>
         </button>
       </div>
+
+      
 
       <div className="pb-20">
         <Footer />
